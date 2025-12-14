@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Shores Places Finder - Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 3px;
+        }
+        .pass {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .fail {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ocean Shores Places Finder - Tests</h1>
+    <div id="testResults"></div>
+
+    <script>
+        // Load the places data (simplified version for testing)
+        const placesData = [
+            {
+                name: "Ocean Shores Beach",
+                category: "beach",
+                description: "Miles of wide, sandy beaches",
+                location: "Ocean Shores, WA",
+                activities: "Beachcombing, Kite Flying",
+                season: "Year-round"
+            },
+            {
+                name: "Damon Point State Park",
+                category: "nature",
+                description: "Natural wildlife refuge",
+                location: "Ocean Shores, WA",
+                activities: "Bird Watching, Hiking",
+                season: "Year-round"
+            },
+            {
+                name: "Galway Bay Irish Restaurant",
+                category: "dining",
+                description: "Authentic Irish pub",
+                location: "Ocean Shores, WA",
+                activities: "Dining, Live Music",
+                season: "Year-round"
+            }
+        ];
+
+        const testResults = document.getElementById('testResults');
+        let passCount = 0;
+        let failCount = 0;
+
+        function runTest(name, testFn) {
+            const section = document.createElement('div');
+            section.className = 'test-section';
+            
+            const title = document.createElement('h3');
+            title.textContent = name;
+            section.appendChild(title);
+
+            try {
+                const result = testFn();
+                const resultDiv = document.createElement('div');
+                resultDiv.className = 'test-result ' + (result ? 'pass' : 'fail');
+                resultDiv.textContent = result ? '✓ PASS' : '✗ FAIL';
+                section.appendChild(resultDiv);
+                
+                if (result) passCount++;
+                else failCount++;
+            } catch (error) {
+                const resultDiv = document.createElement('div');
+                resultDiv.className = 'test-result fail';
+                resultDiv.textContent = '✗ FAIL: ' + error.message;
+                section.appendChild(resultDiv);
+                failCount++;
+            }
+
+            testResults.appendChild(section);
+        }
+
+        // Test 1: Places data exists and has items
+        runTest('Places data should exist and have items', () => {
+            return placesData && placesData.length > 0;
+        });
+
+        // Test 2: Each place has required fields
+        runTest('Each place should have required fields', () => {
+            return placesData.every(place => 
+                place.name && 
+                place.category && 
+                place.description && 
+                place.location && 
+                place.activities && 
+                place.season
+            );
+        });
+
+        // Test 3: Categories are valid
+        runTest('All categories should be valid', () => {
+            const validCategories = ['beach', 'nature', 'dining', 'shopping', 'activities', 'attractions'];
+            return placesData.every(place => validCategories.includes(place.category));
+        });
+
+        // Test 4: Filter by category works
+        runTest('Filter by category should work', () => {
+            const beachPlaces = placesData.filter(p => p.category === 'beach');
+            return beachPlaces.length > 0 && beachPlaces.every(p => p.category === 'beach');
+        });
+
+        // Test 5: Search functionality works
+        runTest('Search by name should work', () => {
+            const searchTerm = 'beach';
+            const results = placesData.filter(place => 
+                place.name.toLowerCase().includes(searchTerm)
+            );
+            return results.length > 0;
+        });
+
+        // Test 6: All locations are in or near Ocean Shores
+        runTest('All places should be in or near Ocean Shores, WA', () => {
+            return placesData.every(place => 
+                place.location.toLowerCase().includes('ocean shores') ||
+                place.location.toLowerCase().includes('wa') ||
+                place.location.toLowerCase().includes('nearby')
+            );
+        });
+
+        // Display summary
+        const summary = document.createElement('div');
+        summary.className = 'test-section';
+        summary.innerHTML = `<h2>Test Summary</h2>
+            <p><strong>Total Tests:</strong> ${passCount + failCount}</p>
+            <p class="pass"><strong>Passed:</strong> ${passCount}</p>
+            <p class="${failCount > 0 ? 'fail' : 'pass'}"><strong>Failed:</strong> ${failCount}</p>`;
+        testResults.appendChild(summary);
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover interesting places to visit in Ocean Shores, WA and surrounding areas">
+    <title>Ocean Shores Places Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌊 Ocean Shores Places Finder</h1>
+            <p class="subtitle">Discover interesting places in Ocean Shores, WA and surrounding areas</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <div class="search-controls">
+                <input type="text" id="searchInput" placeholder="Search places..." aria-label="Search places">
+                <select id="categoryFilter" aria-label="Filter by category">
+                    <option value="all">All Categories</option>
+                    <option value="beach">Beaches</option>
+                    <option value="nature">Nature & Parks</option>
+                    <option value="dining">Dining</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="activities">Activities</option>
+                    <option value="attractions">Attractions</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="places-section">
+            <div id="placesContainer" class="places-grid">
+                <!-- Places will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section id="noResults" class="no-results" style="display: none;">
+            <p>No places found matching your criteria. Try a different search or category.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ocean Shores Places Finder. Explore the beautiful Pacific Coast!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
