@@ -3,44 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover Ocean Shores, WA</title>
+    <meta name="description" content="Discover interesting places to visit in Ocean Shores, WA and surrounding areas">
+    <title>Ocean Shores Places Finder</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>🌊 Discover Ocean Shores, WA</h1>
-            <p class="tagline">Explore the beautiful coastal town on Washington's Pacific Coast</p>
+            <h1>🌊 Ocean Shores Places Finder</h1>
+            <p class="subtitle">Discover interesting places in Ocean Shores, WA and surrounding areas</p>
         </div>
     </header>
 
     <main class="container">
-        <section class="intro">
-            <h2>Welcome to Ocean Shores</h2>
-            <p>Ocean Shores is a coastal city in Grays Harbor County, Washington. Known for its beautiful beaches, stunning sunsets, and outdoor activities, it's a perfect destination for nature lovers and adventure seekers.</p>
-        </section>
-
-        <section class="filters">
-            <h3>Filter by Category</h3>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="beach">🏖️ Beaches</button>
-                <button class="filter-btn" data-category="nature">🌲 Nature</button>
-                <button class="filter-btn" data-category="dining">🍽️ Dining</button>
-                <button class="filter-btn" data-category="activities">🎯 Activities</button>
-                <button class="filter-btn" data-category="shopping">🛍️ Shopping</button>
+        <section class="search-section">
+            <div class="search-controls">
+                <input type="text" id="searchInput" placeholder="Search places..." aria-label="Search places">
+                <select id="categoryFilter" aria-label="Filter by category">
+                    <option value="all">All Categories</option>
+                    <option value="beach">Beaches</option>
+                    <option value="nature">Nature & Parks</option>
+                    <option value="dining">Dining</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="activities">Activities</option>
+                    <option value="attractions">Attractions</option>
+                </select>
             </div>
         </section>
 
-        <section class="places-grid" id="placesGrid">
-            <!-- Places will be dynamically inserted here -->
+        <section class="places-section">
+            <div id="placesContainer" class="places-grid">
+                <!-- Places will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section id="noResults" class="no-results" style="display: none;">
+            <p>No places found matching your criteria. Try a different search or category.</p>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Discover Ocean Shores. All rights reserved.</p>
-            <p>Plan your perfect coastal getaway! 🌅</p>
+            <p>&copy; 2025 Ocean Shores Places Finder. Explore the beautiful Pacific Coast!</p>
         </div>
     </footer>
 

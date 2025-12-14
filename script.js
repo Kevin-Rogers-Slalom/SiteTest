@@ -1,313 +1,264 @@
-// Ocean Shores Places Data
-const places = [
+// Places data for Ocean Shores, WA and surrounding areas
+const placesData = [
     {
         name: "Ocean Shores Beach",
         category: "beach",
-        icon: "🏖️",
-        description: "Miles of pristine sandy beaches perfect for beachcombing, kite flying, and watching spectacular sunsets over the Pacific Ocean.",
-        highlights: [
-            "6 miles of drivable beach",
-            "Perfect for beachcombing",
-            "Stunning sunsets"
-        ]
+        description: "Miles of wide, sandy beaches perfect for walking, beachcombing, kite flying, and watching stunning sunsets over the Pacific Ocean.",
+        location: "Ocean Shores, WA",
+        activities: "Beachcombing, Kite Flying, Sunset Viewing",
+        season: "Year-round"
     },
     {
         name: "Damon Point State Park",
         category: "nature",
-        icon: "🦅",
-        description: "A natural sanctuary at the southern tip of Ocean Shores, featuring dunes, wildlife viewing, and beautiful coastal trails.",
-        highlights: [
-            "Bird watching paradise",
-            "Coastal dune trails",
-            "Harbor seal spotting"
-        ]
+        description: "A natural wildlife refuge with trails through coastal dunes and wetlands. Great for bird watching and nature photography.",
+        location: "Ocean Shores, WA",
+        activities: "Bird Watching, Hiking, Photography",
+        season: "Year-round"
     },
     {
-        name: "Ocean City State Park",
-        category: "nature",
-        icon: "🏕️",
-        description: "A popular camping destination with beach access, featuring over 170 campsites and direct access to the ocean.",
-        highlights: [
-            "Camping facilities",
-            "Beach access",
-            "Picnic areas"
-        ]
+        name: "Ocean Shores North Jetty",
+        category: "attractions",
+        description: "Popular spot for fishing, crabbing, and watching boats enter Grays Harbor. Often see seals and sea lions.",
+        location: "Ocean Shores, WA",
+        activities: "Fishing, Wildlife Viewing, Photography",
+        season: "Year-round"
     },
     {
         name: "Coastal Interpretive Center",
-        category: "activities",
-        icon: "🏛️",
-        description: "Learn about the natural and cultural history of the area through exhibits, educational programs, and observation decks.",
-        highlights: [
-            "Educational exhibits",
-            "Observation tower",
-            "Free admission"
-        ]
+        category: "attractions",
+        description: "Educational center featuring exhibits on local marine life, coastal ecosystems, and the area's natural history.",
+        location: "Ocean Shores, WA",
+        activities: "Education, Indoor Activities",
+        season: "Year-round"
     },
     {
-        name: "Chance A La Mer",
+        name: "Galway Bay Irish Restaurant & Pub",
         category: "dining",
-        icon: "🍴",
-        description: "Fine dining experience featuring fresh seafood and Northwest cuisine with ocean views.",
-        highlights: [
-            "Fresh local seafood",
-            "Ocean views",
-            "Wine selection"
-        ]
+        description: "Authentic Irish pub serving traditional Irish dishes, fresh seafood, and a great selection of beers in a cozy atmosphere.",
+        location: "Ocean Shores, WA",
+        activities: "Dining, Live Music",
+        season: "Year-round"
     },
     {
-        name: "Galway Bay Irish Pub & Restaurant",
+        name: "Emily's Restaurant",
         category: "dining",
-        icon: "🍺",
-        description: "Authentic Irish pub atmosphere with hearty food, local beers, and live entertainment.",
-        highlights: [
-            "Irish cuisine",
-            "Live music",
-            "Local craft beers"
-        ]
-    },
-    {
-        name: "Mike's Seafood",
-        category: "dining",
-        icon: "🦞",
-        description: "Fresh seafood market and restaurant serving the best local catch, including Dungeness crab and razor clams.",
-        highlights: [
-            "Fresh daily catch",
-            "Dungeness crab",
-            "Clam chowder"
-        ]
-    },
-    {
-        name: "Quinault Beach Resort & Casino",
-        category: "activities",
-        icon: "🎰",
-        description: "Full-service resort featuring gaming, entertainment, spa services, and oceanfront accommodations.",
-        highlights: [
-            "Casino gaming",
-            "Spa services",
-            "Ocean view rooms"
-        ]
-    },
-    {
-        name: "Ocean Shores Golf Course",
-        category: "activities",
-        icon: "⛳",
-        description: "18-hole links-style golf course with challenging play and beautiful coastal scenery.",
-        highlights: [
-            "18 holes",
-            "Links-style course",
-            "Coastal views"
-        ]
-    },
-    {
-        name: "Jetty Fishing",
-        category: "activities",
-        icon: "🎣",
-        description: "Popular spot for fishing, crabbing, and watching boats navigate the Grays Harbor entrance.",
-        highlights: [
-            "Salmon fishing",
-            "Crabbing spots",
-            "Boat watching"
-        ]
-    },
-    {
-        name: "North Bay Park",
-        category: "nature",
-        icon: "🌳",
-        description: "Beautiful park along North Bay featuring walking trails, picnic areas, and wildlife viewing opportunities.",
-        highlights: [
-            "Walking trails",
-            "Wildlife viewing",
-            "Peaceful setting"
-        ]
-    },
-    {
-        name: "Shilo Restaurant",
-        category: "dining",
-        icon: "🥞",
-        description: "Family-friendly restaurant offering breakfast, lunch, and dinner with oceanfront dining.",
-        highlights: [
-            "Oceanfront dining",
-            "All-day breakfast",
-            "Family-friendly"
-        ]
-    },
-    {
-        name: "Ocean Shores Convention Center",
-        category: "activities",
-        icon: "🎪",
-        description: "Hosts various events throughout the year including craft shows, festivals, and community gatherings.",
-        highlights: [
-            "Year-round events",
-            "Craft fairs",
-            "Community events"
-        ]
-    },
-    {
-        name: "Murphy's Candy & Ice Cream",
-        category: "shopping",
-        icon: "🍦",
-        description: "Classic candy shop and ice cream parlor featuring homemade treats and nostalgic confections.",
-        highlights: [
-            "Homemade ice cream",
-            "Salt water taffy",
-            "Nostalgic candies"
-        ]
-    },
-    {
-        name: "Ocean Shores Kite Festival Grounds",
-        category: "activities",
-        icon: "🪁",
-        description: "Annual location for the International Kite Festival, one of the largest kite festivals in the world.",
-        highlights: [
-            "World-class kite festival",
-            "Beach activities",
-            "Family fun"
-        ]
-    },
-    {
-        name: "Oyhut Bay Trail",
-        category: "nature",
-        icon: "🚶",
-        description: "Scenic 1.2-mile walking trail through coastal forest and wetlands, perfect for bird watching and nature photography.",
-        highlights: [
-            "1.2-mile trail",
-            "Bird watching",
-            "Photography spots"
-        ]
+        description: "Local favorite known for fresh seafood, steaks, and pasta. Features ocean views and a warm, welcoming atmosphere.",
+        location: "Ocean Shores, WA",
+        activities: "Fine Dining, Ocean Views",
+        season: "Year-round"
     },
     {
         name: "Pacific Paradise Family Fun Center",
         category: "activities",
-        icon: "🎮",
-        description: "Indoor entertainment complex featuring go-karts, mini golf, arcade games, and laser tag.",
-        highlights: [
-            "Go-kart racing",
-            "Mini golf",
-            "Arcade games"
-        ]
+        description: "Indoor entertainment center with go-karts, mini golf, arcade games, and bumper boats. Perfect for families and rainy days.",
+        location: "Ocean Shores, WA",
+        activities: "Mini Golf, Go-Karts, Arcade",
+        season: "Year-round"
     },
     {
-        name: "The Home Port Restaurant",
-        category: "dining",
-        icon: "🍤",
-        description: "Long-standing local favorite known for generous portions and classic American seafood dishes.",
-        highlights: [
-            "Generous portions",
-            "Classic seafood",
-            "Local favorite"
-        ]
+        name: "Cranberry Museum",
+        category: "attractions",
+        description: "Learn about the history of cranberry farming in the Pacific Northwest with exhibits and seasonal farm tours.",
+        location: "Long Beach, WA (nearby)",
+        activities: "Museum Tours, Seasonal Harvest",
+        season: "Best in Fall"
     },
     {
-        name: "Fusions Gallery",
+        name: "Ocean Shores Convention Center Farmers Market",
         category: "shopping",
-        icon: "🎨",
-        description: "Local art gallery showcasing works by Pacific Northwest artists, including paintings, sculptures, and jewelry.",
-        highlights: [
-            "Local artwork",
-            "Unique gifts",
-            "Pacific Northwest artists"
-        ]
+        description: "Seasonal farmers market featuring local produce, crafts, baked goods, and artisan products from the region.",
+        location: "Ocean Shores, WA",
+        activities: "Shopping, Local Crafts",
+        season: "Summer weekends"
     },
     {
-        name: "Shores Bowl",
+        name: "Quinault Rain Forest",
+        category: "nature",
+        description: "Stunning temperate rainforest with ancient trees, waterfalls, and hiking trails. About an hour drive from Ocean Shores.",
+        location: "Quinault, WA (1 hour north)",
+        activities: "Hiking, Nature Photography, Camping",
+        season: "Spring through Fall"
+    },
+    {
+        name: "Grays Harbor Lighthouse",
+        category: "attractions",
+        description: "Tallest lighthouse in Washington State, offering tours and panoramic views of the coast from the top.",
+        location: "Westport, WA (nearby)",
+        activities: "Tours, Photography, History",
+        season: "Year-round"
+    },
+    {
+        name: "Bottle Beach State Park",
+        category: "nature",
+        description: "Pristine tidelands perfect for clamming, bird watching, and exploring tide pools during low tide.",
+        location: "Near Ocean Shores, WA",
+        activities: "Clamming, Tide Pooling, Bird Watching",
+        season: "Year-round (best at low tide)"
+    },
+    {
+        name: "Ocean Shores Golf Course",
         category: "activities",
-        icon: "🎳",
-        description: "Family bowling center with modern lanes, arcade games, and snack bar for rainy day fun.",
-        highlights: [
-            "Bowling lanes",
-            "Family-friendly",
-            "Rainy day activity"
-        ]
+        description: "18-hole championship golf course with coastal views, challenging holes, and wildlife sightings.",
+        location: "Ocean Shores, WA",
+        activities: "Golf, Wildlife Viewing",
+        season: "Year-round"
+    },
+    {
+        name: "Smoke Shop BBQ",
+        category: "dining",
+        description: "Award-winning barbecue restaurant serving slow-smoked meats, homemade sides, and delicious comfort food.",
+        location: "Ocean Shores, WA",
+        activities: "Casual Dining, BBQ",
+        season: "Year-round"
+    },
+    {
+        name: "Ocean Shores Kite Festival",
+        category: "activities",
+        description: "Annual summer festival featuring kite flying competitions, demonstrations, and colorful displays on the beach.",
+        location: "Ocean Shores, WA",
+        activities: "Kite Flying, Festivals, Family Fun",
+        season: "Summer (June)"
+    },
+    {
+        name: "Oyhut Wildlife Recreation Area",
+        category: "nature",
+        description: "Coastal wildlife area with trails through forest and dunes, offering solitude and nature observation opportunities.",
+        location: "Ocean Shores, WA",
+        activities: "Hiking, Bird Watching, Solitude",
+        season: "Year-round"
+    },
+    {
+        name: "Murphy's Candy & Ice Cream",
+        category: "shopping",
+        description: "Classic candy shop and ice cream parlor featuring homemade fudge, saltwater taffy, and hand-dipped ice cream.",
+        location: "Ocean Shores, WA",
+        activities: "Shopping, Sweets",
+        season: "Year-round"
+    },
+    {
+        name: "Westport Marina",
+        category: "activities",
+        description: "Busy fishing harbor offering charter fishing trips, whale watching tours, and fresh seafood markets.",
+        location: "Westport, WA (20 min south)",
+        activities: "Charter Fishing, Whale Watching, Seafood",
+        season: "Year-round"
     }
 ];
 
-// Initialize the website
-document.addEventListener('DOMContentLoaded', function() {
-    displayPlaces('all');
-    setupFilters();
-});
+// DOM elements
+const searchInput = document.getElementById('searchInput');
+const categoryFilter = document.getElementById('categoryFilter');
+const placesContainer = document.getElementById('placesContainer');
+const noResults = document.getElementById('noResults');
 
-// Display places based on category
-function displayPlaces(category) {
-    const placesGrid = document.getElementById('placesGrid');
-    placesGrid.innerHTML = '';
-
-    const filteredPlaces = category === 'all' 
-        ? places 
-        : places.filter(place => place.category === category);
-
-    filteredPlaces.forEach(place => {
+// Display places
+function displayPlaces(places) {
+    placesContainer.innerHTML = '';
+    
+    if (places.length === 0) {
+        placesContainer.style.display = 'none';
+        noResults.style.display = 'block';
+        return;
+    }
+    
+    placesContainer.style.display = 'grid';
+    noResults.style.display = 'none';
+    
+    places.forEach(place => {
         const placeCard = createPlaceCard(place);
-        placesGrid.appendChild(placeCard);
-    });
-
-    // Add animation
-    const cards = placesGrid.querySelectorAll('.place-card');
-    cards.forEach((card, index) => {
-        setTimeout(() => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 50);
-        }, index * 50);
+        placesContainer.appendChild(placeCard);
     });
 }
 
-// Create a place card element
+// Escape HTML to prevent XSS attacks
+function escapeHtml(unsafe) {
+    const div = document.createElement('div');
+    div.textContent = unsafe;
+    return div.innerHTML;
+}
+
+// Create place card
 function createPlaceCard(place) {
     const card = document.createElement('div');
     card.className = 'place-card';
     
-    const highlightsList = place.highlights
-        .map(highlight => `<li>${highlight}</li>`)
-        .join('');
-
+    // Escape all user data to prevent XSS
+    const safeName = escapeHtml(place.name);
+    const safeDescription = escapeHtml(place.description);
+    const safeLocation = escapeHtml(place.location);
+    const safeActivities = escapeHtml(place.activities);
+    const safeSeason = escapeHtml(place.season);
+    const safeCategory = escapeHtml(getCategoryLabel(place.category));
+    
     card.innerHTML = `
-        <div class="place-image">${place.icon}</div>
-        <div class="place-content">
-            <span class="place-category">${getCategoryName(place.category)}</span>
-            <h3 class="place-name">${place.name}</h3>
-            <p class="place-description">${place.description}</p>
-            <ul class="place-highlights">
-                ${highlightsList}
-            </ul>
+        <div class="place-header">
+            <h3>${safeName}</h3>
+            <span class="place-category">${safeCategory}</span>
+        </div>
+        <div class="place-body">
+            <p class="place-description">${safeDescription}</p>
+            <div class="place-details">
+                <div class="place-detail">
+                    <span class="place-icon">📍</span>
+                    <span><strong>Location:</strong> ${safeLocation}</span>
+                </div>
+                <div class="place-detail">
+                    <span class="place-icon">🎯</span>
+                    <span><strong>Activities:</strong> ${safeActivities}</span>
+                </div>
+                <div class="place-detail">
+                    <span class="place-icon">📅</span>
+                    <span><strong>Best Season:</strong> ${safeSeason}</span>
+                </div>
+            </div>
         </div>
     `;
-
+    
     return card;
 }
 
-// Get category display name
-function getCategoryName(category) {
-    const categories = {
-        'beach': '🏖️ Beach',
-        'nature': '🌲 Nature',
-        'dining': '🍽️ Dining',
-        'activities': '🎯 Activities',
-        'shopping': '🛍️ Shopping'
+// Get category label
+function getCategoryLabel(category) {
+    const labels = {
+        'beach': 'Beaches',
+        'nature': 'Nature & Parks',
+        'dining': 'Dining',
+        'shopping': 'Shopping',
+        'activities': 'Activities',
+        'attractions': 'Attractions'
     };
-    return categories[category] || category;
+    return labels[category] || category;
 }
 
-// Setup filter buttons
-function setupFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
+// Filter places
+function filterPlaces() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const selectedCategory = categoryFilter.value;
     
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Get category and display places
-            const category = this.getAttribute('data-category');
-            displayPlaces(category);
+    let filtered = placesData;
+    
+    // Filter by category
+    if (selectedCategory !== 'all') {
+        filtered = filtered.filter(place => place.category === selectedCategory);
+    }
+    
+    // Filter by search term
+    if (searchTerm) {
+        filtered = filtered.filter(place => {
+            return place.name.toLowerCase().includes(searchTerm) ||
+                   place.description.toLowerCase().includes(searchTerm) ||
+                   place.location.toLowerCase().includes(searchTerm) ||
+                   place.activities.toLowerCase().includes(searchTerm);
         });
-    });
+    }
+    
+    displayPlaces(filtered);
 }
+
+// Event listeners
+searchInput.addEventListener('input', filterPlaces);
+categoryFilter.addEventListener('change', filterPlaces);
+
+// Initial display
+displayPlaces(placesData);
