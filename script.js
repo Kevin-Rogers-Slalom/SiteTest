@@ -171,30 +171,45 @@ function displayPlaces(places) {
     });
 }
 
+// Escape HTML to prevent XSS attacks
+function escapeHtml(unsafe) {
+    const div = document.createElement('div');
+    div.textContent = unsafe;
+    return div.innerHTML;
+}
+
 // Create place card
 function createPlaceCard(place) {
     const card = document.createElement('div');
     card.className = 'place-card';
     
+    // Escape all user data to prevent XSS
+    const safeName = escapeHtml(place.name);
+    const safeDescription = escapeHtml(place.description);
+    const safeLocation = escapeHtml(place.location);
+    const safeActivities = escapeHtml(place.activities);
+    const safeSeason = escapeHtml(place.season);
+    const safeCategory = escapeHtml(getCategoryLabel(place.category));
+    
     card.innerHTML = `
         <div class="place-header">
-            <h3>${place.name}</h3>
-            <span class="place-category">${getCategoryLabel(place.category)}</span>
+            <h3>${safeName}</h3>
+            <span class="place-category">${safeCategory}</span>
         </div>
         <div class="place-body">
-            <p class="place-description">${place.description}</p>
+            <p class="place-description">${safeDescription}</p>
             <div class="place-details">
                 <div class="place-detail">
                     <span class="place-icon">📍</span>
-                    <span><strong>Location:</strong> ${place.location}</span>
+                    <span><strong>Location:</strong> ${safeLocation}</span>
                 </div>
                 <div class="place-detail">
                     <span class="place-icon">🎯</span>
-                    <span><strong>Activities:</strong> ${place.activities}</span>
+                    <span><strong>Activities:</strong> ${safeActivities}</span>
                 </div>
                 <div class="place-detail">
                     <span class="place-icon">📅</span>
-                    <span><strong>Best Season:</strong> ${place.season}</span>
+                    <span><strong>Best Season:</strong> ${safeSeason}</span>
                 </div>
             </div>
         </div>

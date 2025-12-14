@@ -52,6 +52,7 @@ SiteTest/
 ├── index.html      # Main HTML file
 ├── styles.css      # CSS styles
 ├── script.js       # JavaScript functionality
+├── test.html       # Basic test page for verification
 └── README.md       # This file
 ```
 
